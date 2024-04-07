@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #f1f1f1;
+}
+.global_padding {
+  padding: 0 123px;
+}
+@media (max-width: 600px) {
+  .global_padding {
+    padding: 0;
+  }
+}
+
+/* ---- Top Margin ---- */
+.container_tm {
+  margin-top: 40px;
+}
+
+/* ---- Bottom Margin ---- */
+.bm {
+  margin-bottom: 40px;
+}
+
+/* ---- For LINK ---- */
+.link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.mblink {
+  color: black;
+  text-decoration: none;
+}
+
+/* ---- TEMPORARY DISCOUNT ---- */
+.discountContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ---- NAVBAR LOGIN BUTTON ---- */
+.navLoginButton {
+  font-size: 14px !important;
+  font-weight: bold !important;
+  width: 150px !important;
+  padding: 2px !important;
+  color: white !important;
+  border: 1px solid white !important;
+}
+
+.navLoginButton:hover {
+  border: 1px solid white !important;
+}
+
+/* ---- DISCOUNT PAGE BANNER ---- */
+.discountBannerText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* ---- PRODUCT DETAILS PREV/NEXT BUTTON ---- */
+.swiper-button-prev {
+  background-color: black;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 100% !important;
+  color: white !important;
+}
+.swiper-button-next {
+  background-color: black;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 100% !important;
+  color: white !important;
+}
+
+/* <----------profileButton-----------> */
+.profileButton {
+  height: 24px;
+}

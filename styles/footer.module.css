@@ -1,0 +1,53 @@
+.container {
+  padding: 50px 123px;
+  background-color: #31363f;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.contact {
+  width: 100%;
+  color: white;
+}
+.icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.instore {
+  width: 100%;
+  color: white;
+}
+
+.radiant {
+  width: 100%;
+  color: white;
+}
+
+.support {
+  width: 100%;
+  color: white;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 40px;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+}

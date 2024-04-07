@@ -1,0 +1,38 @@
+.br {
+  width: 165px;
+  height: 4px;
+  background-color: #31363f;
+  margin-top: 8px;
+}
+
+.title {
+  color: #31363f;
+}
+
+/* ------ CategoryGrid ------ */
+.gridContainer {
+  margin-top: 10px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.gridImage {
+  transition: 0.5s;
+}
+
+.content:hover {
+  background-color: #bbbbbb;
+}
+
+.content:hover .gridImage {
+  width: 283px;
+  height: 283px;
+}
