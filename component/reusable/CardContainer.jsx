@@ -1,8 +1,8 @@
 "use client";
-import { Suspense } from "react"; // Import Suspense
 import { useCategoryProduct, useDiscountProduct } from "@/hooks/useProducts";
 import ProductCard from "./ProductCard";
 import { usePathname, useSearchParams } from "next/navigation";
+import GlobalLoading from "./loading/GlobalLoading";
 
 const CardContainer = ({ dc }) => {
   const { discountProducts, discountError, discountLoading } =
@@ -20,14 +20,22 @@ const CardContainer = ({ dc }) => {
     data = discountProducts;
   }
 
+  if (path === "/" ? discountLoading : productLoading) {
+    return (
+      <GlobalLoading
+        isLoading={path === "/" ? discountLoading : productLoading}
+      />
+    );
+  }
+
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <>
       <ProductCard
         data={dc ? data : categoryData}
         loading={dc ? discountLoading : productLoading}
         error={dc ? discountError : productError}
       />
-    </Suspense>
+    </>
   );
 };
 
