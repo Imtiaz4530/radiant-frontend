@@ -29,20 +29,24 @@ export const useProducts = () => {
     const { categoryName } = category?.data?.attributes;
 
     const proImage = productImage.data.map((item) => {
-      const { id, attributes } = item;
-      const { url } = attributes;
+      const {
+        id,
+        attributes: { url },
+      } = item;
 
       return { id, url };
     });
 
     const descImage = descriptionImage.data.map((item) => {
-      const { id, attributes } = item;
-      const { url } = attributes;
+      const {
+        id,
+        attributes: { url },
+      } = item;
 
       return { id, url };
     });
 
-    const { url } = displayImage?.data?.attributes;
+    const displaYImage = displayImage?.data?.attributes;
 
     return {
       id,
@@ -56,7 +60,7 @@ export const useProducts = () => {
       variation,
       proImage,
       descImage,
-      displaYImage: url,
+      displaYImage: displaYImage?.url,
     };
   });
 
