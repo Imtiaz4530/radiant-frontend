@@ -1,20 +1,18 @@
 "use client";
 import { useProduct } from "@/hooks/useProducts";
 import { Box } from "@mui/material";
-import { useParams, useRouter, useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation";
 
 import styles from "@/styles/productDetails.module.css";
 import GlobalLoading from "@/component/reusable/loading/GlobalLoading";
-import FeatureIcons from "@/component/productDetails/FeatureIcons";
 import DescriptionImaga from "@/component/productDetails/DescriptionImaga";
 import ProductDescription from "@/component/productDetails/ProductDescription";
+import { Suspense } from "react";
+import Feature from "@/component/productDetails/Feature";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const { data, loading, error } = useProduct(parseInt(id));
-
-  const query = useSearchParams();
-  const findQuery = query.get("category");
 
   if (loading) {
     return <GlobalLoading isLoading={loading} />;
@@ -27,7 +25,9 @@ const ProductDetails = () => {
         <ProductDescription data={data} />
 
         {/* FEATURE ICONS */}
-        {findQuery === "SMART WATCH" && <FeatureIcons />}
+        <Suspense>
+          <Feature />
+        </Suspense>
 
         {/* Description Images */}
         <DescriptionImaga descriptionImages={data.descriptionImages} />
