@@ -8,6 +8,7 @@ import CardContainer from "@/component/reusable/CardContainer";
 import Category from "@/component/categories/Category";
 import SimpleButton from "@/component/reusable/Button";
 import Link from "next/link";
+import { Suspense } from "react";
 
 const App = () => {
   return (
@@ -19,7 +20,9 @@ const App = () => {
       <Box className="container_tm bm discountContainer">
         <Image alt="banner" src={discountImage} className={styles.img} />
 
-        <CardContainer dc={true} />
+        <Suspense>
+          <CardContainer dc={true} />
+        </Suspense>
 
         <Link href={"/discount"} className="link">
           <SimpleButton

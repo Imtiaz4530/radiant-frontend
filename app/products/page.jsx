@@ -8,6 +8,7 @@ import earbud from "@/public/catagory/c1.webp";
 import brush from "@/public/catagory/c2.webp";
 import headphone from "@/public/catagory/c3.webp";
 import smartwatch from "@/public/catagory/c4.webp";
+import { Suspense } from "react";
 
 const Products = () => {
   const query = useSearchParams();
@@ -28,7 +29,9 @@ const Products = () => {
         }
         className={styles.img}
       />
-      <CardContainer dc={false} />
+      <Suspense>
+        <CardContainer dc={false} />
+      </Suspense>
     </div>
   );
 };

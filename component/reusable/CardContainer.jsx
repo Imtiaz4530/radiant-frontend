@@ -20,14 +20,6 @@ const CardContainer = ({ dc }) => {
     data = discountProducts;
   }
 
-  if (path === "/" ? discountLoading : productLoading) {
-    return (
-      <GlobalLoading
-        isLoading={path === "/" ? discountLoading : productLoading}
-      />
-    );
-  }
-
   return (
     <>
       <ProductCard
