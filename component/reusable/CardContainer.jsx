@@ -2,6 +2,7 @@
 import { useCategoryProduct, useDiscountProduct } from "@/hooks/useProducts";
 import ProductCard from "./ProductCard";
 import { usePathname, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 const CardContainer = ({ dc }) => {
   const { discountProducts, discountError, discountLoading } =
@@ -20,13 +21,13 @@ const CardContainer = ({ dc }) => {
   }
 
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <ProductCard
         data={dc ? data : categoryData}
         loading={dc ? discountLoading : productLoading}
         error={dc ? discountError : productError}
       />
-    </>
+    </Suspense>
   );
 };
 

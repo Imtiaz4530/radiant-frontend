@@ -1,5 +1,5 @@
 import CardContainer from "@/component/reusable/CardContainer";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 import discountImage from "../../public/discountBanner.png";
 import Image from "next/image";
